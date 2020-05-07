@@ -1,7 +1,7 @@
 const express = require("express");
 
 const server = express();
-
+const port = process.env.PORT || 5000
 server.use(express.json());
 
 //set up a users array
@@ -120,4 +120,4 @@ server.put('/api/users/:id', (req, res) => {
 
 
 
-server.listen(5000, () => console.log("\n== API is up ==\n"))
+server.listen(port, () => console.log(`\n== API is up on http://localhost:${port} ==\n`))
